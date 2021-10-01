@@ -3,8 +3,8 @@
 source ./conf.ini
 
 master_list=
-for REDIS_PORT in ${list[@]}; do
-master_list=$master_list\ $REDIS_HOST:$REDIS_PORT
+for NODE in ${NODELIST[@]}; do
+master_list=$master_list\ NODE
 done
 
 echo $master_list
