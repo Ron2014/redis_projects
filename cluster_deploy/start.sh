@@ -2,9 +2,7 @@
 
 source ./conf.ini
 
-ROOTDIR=cluster
-
-for REDIS_PORT in $(ls $ROOTDIR/cluster); do
+for REDIS_PORT in $(ls $ROOTDIR); do
 pushd $ROOTDIR/$REDIS_PORT
 redis-server ./redis.conf
 if [ 0 -eq $? ]; then

@@ -8,8 +8,9 @@ for NODE in ${NODELIST[@]}; do
 NODEARR=(${NODE//:/ })
 REDIS_HOST=${NODEARR[0]}
 REDIS_PORT=${NODEARR[1]}
-echo $NODE $REDIS_HOST $REDIS_PORT
+#echo $NODE $REDIS_HOST $REDIS_PORT
 if [ "$REDIS_HOST" == "$LOCAL_HOST" ]; then
+echo -e '\033[01;32mcreate node '$NODE'\033[01;00m'
 mkdir -p $ROOTDIR/$REDIS_PORT
 filename=$ROOTDIR/$REDIS_PORT/redis.conf
 cp -f redis.conf.tpl $filename

@@ -4,7 +4,7 @@ source ./conf.ini
 
 master_list=
 for NODE in ${NODELIST[@]}; do
-master_list=$master_list\ NODE
+master_list=$master_list\ $NODE
 done
 
 echo $master_list
